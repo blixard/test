@@ -5,10 +5,303 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./app.js"></script>
-    <title>harsh website</title>
+    <link rel="stylesheet" href="./index.css">
+    <title>sample website</title>
 </head>
 <body>
-    hello world
-    hi
+    <header>
+        <div class="title">
+            Order Management System
+        </div>
+
+        <nav class="headnav"></nav>
+    </header>
+
+    <main>
+        <div class="capacity">
+            <div class="button_group">
+                <Button>Overall capacity</Button>
+                <Button onclick="showCapacityConstraint()">capacity constraint</Button>
+                <Button>capacity rale matrix</Button>
+                <Button>something</Button> 
+                <Button>Overall capacity</Button>
+            </div>
+            <div class="capacitymatrix" id="id_capacity_constraint">
+                <div class="formcm" >
+                    
+                    <div class="row1">
+                        <div class="col col1">
+                            <div class="group">
+                                <label for="plantgroup_select" class="required">Plant Group</label> 
+                                <select id="plantgroup_select">
+                                    <option value="actual value 1">Display Text 1</option>
+                                    <option value="actual value 2">Display Text 2</option>
+                                    <option value="actual value 3">Display Text 3</option>
+                                </select>
+                            </div>
+
+                            <div class="group">
+                                <label for="plant_select" class="required">Plant</label> 
+                                <select id="plant_select">
+                                    <option value="actual value 1">Display Text 1</option>
+                                    <option value="actual value 2">Display Text 2</option>
+                                    <option value="actual value 3">Display Text 3</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col col2">
+                            <div class="group">
+                                <label for="yrwk_from_input">YRWK From</label> 
+                                <Input id="yrwk_from_input">
+                            </div>
+                            <div class="group">
+                                <label for="yrwk_to_input">YRWK To</label> 
+                                <Input id="yrwk_to_input">
+                            </div>
+                        </div>
+                        <div class="col col3">
+                            <div class="group">
+                                <label for="constraint_type_select">Constraint type</label> 
+                                <select id="constraint_type_select">
+                                    <option value="actual value 1">Display Text 1</option>
+                                    <option value="actual value 2">Display Text 2</option>
+                                    <option value="actual value 3">Display Text 3</option>
+                                </select>
+                            </div>
+                            <div class="group">
+                                <label for="constraint1_select">Constraint1 </label> 
+                                <select id="constraint1_select">
+                                    <option value="actual value 1">Display Text 1</option>
+                                    <option value="actual value 2">Display Text 2</option>
+                                    <option value="actual value 3">Display Text 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col col4">
+                            <div class="group">
+                                <label for="constraint2_select">Constraint2 </label> 
+                                <select id="constraint2_select">
+                                    <option value="actual value 1">Display Text 1</option>
+                                    <option value="actual value 2">Display Text 2</option>
+                                    <option value="actual value 3">Display Text 3</option>
+                                </select>
+                            </div>
+                            <div class="group">
+                                <label for="constraints_select">Constraint S </label> 
+                                <select id="constraints_select">
+                                    <option value="actual value 1">Display Text 1</option>
+                                    <option value="actual value 2">Display Text 2</option>
+                                    <option value="actual value 3">Display Text 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col col5">
+                            <div class="group">
+                                <label for="constraint1_from_input">Constraint1 From</label> 
+                                <Input id="constraint1_from_input" class="number">   
+                            </div>
+                            <div class="group">
+                                <label for="constraint1_to_input">Constraint1 To</label> 
+                                <Input id="constraint1_to_input" class="number">   
+                            </div>
+                        </div>
+
+                        <div class="col col6">
+                            <div class="group">
+                                <label for="constraint2_from_input">Constraint2 From</label> 
+                                <Input id="constraint2_from_input" class="number">    
+                            </div>
+                            <div class="group">
+                                <label for="constraint2_to_input">Constraint2 To</label> 
+                                <Input id="constraint2_to_input" class="number">   
+                            </div>
+                        </div>
+
+                        <div class="col col7">
+                            <div class="group">
+                                <label for="year_week_input">Year Week</label> 
+                                <Input id="year_week_input"> 
+                            </div>
+                            <Button>copy</Button>
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="group">
+                            <label for="processcode_select" class="required">Processcode</label> 
+                            <select id="processcode_select">
+                                <option value="actual value 1">Display Text 1</option>
+                                <option value="actual value 2">Display Text 2</option>
+                                <option value="actual value 3">Display Text 3</option>
+                            </select>
+                        </div>
+
+                        <div class="group btngrp">
+                            <Button onclick="onDisplayClick()">Display</Button>
+                            <Button>Add Rows</Button>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+
+            <div id="display_contents">
+                <table>
+                    <tr class="head">
+                      <th>Edit/Delete</th>
+                      <th>Process</th>
+                      <th>Constraint</th>
+                      <th>Year Week</th>
+                      <th>Const Val1</th>
+                      <th>Const Val2</th>
+                      <th>Const Val3</th>
+                      <th>Constraint1 From</th>
+                      <th>Constraint1 To</th>
+                      <th>Constraint2 From</th>
+                      <th>Constraint2 To</th>
+                      <th>Plant Capacity</th>
+                      <th>Forecast Quantity</th>
+                      <th>Order Quantity</th>
+                      <th>ATP</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="grpbtn">
+                                <Button>Update</Button>
+                                <Button>Cancel</Button>
+                            </div>
+                        </td>
+                        <td>CAL</td>
+                        <td>1</td>
+                        <td>201227</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td><Input value="90"></td>
+                        <td>90</td>
+                        <td>0</td>
+                        <td>90</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="grpbtn">
+                                <Button>Edit</Button>
+                                <Button>Delete</Button>
+                            </div>
+                        </td>
+                        <td>CAL</td>
+                        <td>2</td>
+                        <td>201227</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td><Input value="90"></td>
+                        <td>90</td>
+                        <td>0</td>
+                        <td>90</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="grpbtn">
+                                <Button>Edit</Button>
+                                <Button>Delete</Button>
+                            </div>
+                        </td>
+                        <td>CAL</td>
+                        <td>1</td>
+                        <td>201227</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td><Input value="90"></td>
+                        <td>90</td>
+                        <td>0</td>
+                        <td>90</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="grpbtn">
+                                <Button>Edit</Button>
+                                <Button>Delete</Button>
+                            </div>
+                        </td>
+                        <td>RCL</td>
+                        <td>1</td>
+                        <td>201227</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td><Input value="90"></td>
+                        <td>90</td>
+                        <td>0</td>
+                        <td>90</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="grpbtn">
+                                <Button>Edit</Button>
+                                <Button>Delete</Button>
+                            </div>
+                        </td>
+                        <td>RCL</td>
+                        <td>1</td>
+                        <td>201227</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td><Input value="90"></td>
+                        <td>90</td>
+                        <td>0</td>
+                        <td>90</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="grpbtn">
+                                <Button>Edit</Button>
+                                <Button>Delete</Button>
+                            </div>
+                        </td>
+                        <td>RCL</td>
+                        <td>1</td>
+                        <td>201227</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td><Input value="90"></td>
+                        <td>90</td>
+                        <td>0</td>
+                        <td>90</td>
+                    </tr>
+                  </table>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
