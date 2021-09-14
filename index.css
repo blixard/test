@@ -48,6 +48,33 @@ header nav button:hover {
     font-size:10px;
 }
 
+#id_mdm{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 5px;
+    padding: 5px;
+    background-color: white;
+}
+
+#id_mdm button{
+    border: none;
+    background-color: white;
+    color: rgb(63, 122, 150);
+    margin: 5px;
+    padding: 5px;
+
+}
+
+#id_mdm button:hover{
+    border: none;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    margin: 5px;
+    padding: 5px;
+
+}
+
 
 .capacitymatrix{
     border: 1px solid blue;
