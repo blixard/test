@@ -3,6 +3,52 @@
     color: red;
 }
 
+header{
+    margin: 5px;
+}
+
+header .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    background-color: rgb(48, 64, 153);
+    color: white;
+    font-size:30px;
+}
+
+header nav {
+    display: flex;
+    background-color: rgb(18, 24, 61);
+    color: white;
+    font-size:15px;
+    padding: 10px;
+}
+
+header nav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+header nav button {
+    text-decoration: none;
+    background-color: rgb(18, 24, 61);
+    border:none;
+    color: white;
+    height: 100%;
+    font-size:10px;
+}
+
+header nav button:hover {
+    text-decoration: none;
+    background-color: white;
+    border:none;
+    color:black;
+    font-size:10px;
+}
+
+
 .capacitymatrix{
     border: 1px solid blue;
     margin: 5px;
